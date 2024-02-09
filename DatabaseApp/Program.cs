@@ -47,6 +47,7 @@ var consoleUI = builder.Services.GetRequiredService<ConsoleUI>();
 
 while (menu)
 {
+    Console.Clear();
     Console.WriteLine(" ---------------MENU------------");
     Console.WriteLine("|1. Create a product.           |");
     Console.WriteLine("|2. Show all products.          |");
@@ -59,39 +60,42 @@ while (menu)
     Console.WriteLine("|0. Exit program.               |");
     Console.WriteLine(" -------------------------------");
 
-    int option = int.Parse(Console.ReadLine()!); 
+    var option = Console.ReadLine();
+    
 
     switch (option)
     {
-        case 1:
+        case "1":
             consoleUI.CreateProduct_UI();
             break;
-        case 2:
+        case "2":
             consoleUI.GetProducts_UI();
             break;
-        case 3:
+        case "3":
             consoleUI.UpdateProduct_UI();
             break;
-        case 4:
+        case "4":
             consoleUI.DeleteProduct_UI();
             break;
-        case 5:
+        case "5":
             consoleUI.CreateCustomer_UI();
             break;
-        case 6:
+        case "6":
             consoleUI.GetCustomers_UI();
             break;
-        case 7:
+        case "7":
             consoleUI.UpdateCustomer_UI();
             break;
-        case 8:
+        case "8":
             consoleUI.DeleteCustomer_UI();
             break;
-        case 0:
+        case "0":
             menu = false;
             break;
         default:
-            Console.WriteLine("Invalid option, please try again.");
+            Console.Clear();
+            Console.WriteLine("Invalid option, please press any key to try again.");
+            Console.ReadKey();
             break;
 
     }
