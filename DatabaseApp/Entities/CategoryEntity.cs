@@ -1,0 +1,13 @@
+﻿
+
+using System.ComponentModel.DataAnnotations;
+
+namespace DatabaseApp.Entities;
+
+internal class CategoryEntity
+{
+    [Key]
+    public int Id { get; set; }
+
+    public string CategoryName { get; set; } = null!;
+}
